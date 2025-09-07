@@ -10,7 +10,38 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700%7CMontserrat:400,700">
-    <link rel="stylesheet" href="css/style-cps-blue.css">
+    <link rel="stylesheet" href="css/style-blue.css">
+
+	<style>
+  /* Top-align the two columns */
+  .section-top-panel{
+    -webkit-align-items: flex-start !important; /* Safari */
+    -ms-flex-align: start !important;           /* old IE */
+    align-items: flex-start !important;         /* modern */
+  }
+
+  /* Remove the extra top offset on the right */
+  .section-top-panel-right{
+    margin-top: 0 !important;
+  }
+
+  /* If you see odd behavior around 992–1199px where the right side is absolutely positioned,
+     neutralize that so the top alignment is consistent there too. */
+  @media (min-width: 992px) and (max-width: 1199px){
+    .section-top-panel-right{
+      position: static !important;  /* was absolute; top:80px */
+      top: auto !important;
+      right: auto !important;
+      width: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      padding: 0 !important;        /* optional: match left exactly */
+      text-align: right !important; /* keep your right alignment if desired */
+    }
+  }
+</style>
+
+	
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
