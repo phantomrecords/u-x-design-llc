@@ -28937,3 +28937,31 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
   background: none;
 }
+
+/* === Top panel alignment fixes (added at end) === */
+
++/* 1) Top-align the two columns inside the banner (left+right) */
++.section-top-panel {
++  -webkit-align-items: flex-start !important; /* Safari */
++  -ms-flex-align: start !important;           /* old IE */
++  align-items: flex-start !important;         /* modern */
++}
++
++/* 2) Remove the extra top gap on the right column */
++.section-top-panel-right {
++  margin-top: 0 !important; /* was 10px */
++}
++
++/* 3) Normalize the 992–1199px breakpoint so the right column isn't absolutely positioned */
++@media (min-width: 992px) and (max-width: 1199px) {
++  .section-top-panel-right {
++    position: static !important; /* was absolute */
++    top: auto !important;
++    right: auto !important;
++    width: auto !important;
++    opacity: 1 !important;
++    visibility: visible !important;
++    padding: 0 !important;       /* optional: match left’s padding feel */
++    text-align: right !important;/* keep right alignment */
++  }
++}
